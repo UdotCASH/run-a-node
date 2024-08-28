@@ -15,9 +15,20 @@ go version
 
 ```./setup.sh```
 
-## run node
+## run setup.sh
+
+copy genesis files to devnet directory
+
+```cp genesis.json genesis.ssz devnet/```
 
 cd devnet
+
+
+
+
+## run node
+
+cd 
 
 ```./uchain.sh run geth 1```
 
