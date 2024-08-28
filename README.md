@@ -30,15 +30,21 @@ cd devnet
 
 ## run node (temporary)
 
-```./geth --datadir=gethdata init genesis.json```
-
-```
-./geth --http --http.api eth,net,web3 --ws --ws.api eth,net,web3 --authrpc.jwtsecret jwt.hex --datadir gethdata2 --nodiscover --syncmode full
+```sh
+./geth --datadir=gethdata init genesis.json
 ```
 
-```export PEER=/ip4/172.81.179.112/tcp/13000/p2p/16Uiu2HAmTKvLys4NksdMtex176kBXq5SmQGo5bwJjVVchjfoxBzL```
+```sh
+./geth --http --http.api eth,net,web3 --ws --ws.api eth,net,web3 --authrpc.jwtsecret jwt.hex --datadir gethdata --nodiscover --syncmode full
+```
 
-```./beacon-chain --datadir beacondata --min-sync-peers 1 --genesis-state genesis.ssz --bootstrap-node= --interop-eth1data-votes --chain-config-file config.yml --contract-deployment-block 0 --chain-id 32382 --accept-terms-of-use --jwt-secret jwt.hex --suggested-fee-recipient 0x123463a4B065722E99115D6c222f267d9cABb524 --minimum-peers-per-subnet 0 --enable-debug-rpc-endpoints --execution-endpoint gethdata2/geth.ipc --peer=$PEER```
+```sh
+export PEER=/ip4/172.81.179.112/tcp/13000/p2p/16Uiu2HAmTKvLys4NksdMtex176kBXq5SmQGo5bwJjVVchjfoxBzL
+```
+
+```sh
+./beacon-chain --datadir beacondata --min-sync-peers 1 --genesis-state genesis.ssz --bootstrap-node= --interop-eth1data-votes --chain-config-file config.yml --contract-deployment-block 0 --chain-id 32382 --accept-terms-of-use --jwt-secret jwt.hex --suggested-fee-recipient 0x123463a4B065722E99115D6c222f267d9cABb524 --minimum-peers-per-subnet 0 --enable-debug-rpc-endpoints --execution-endpoint gethdata2/geth.ipc --peer=$PEER
+```
 
 
 ## run node
