@@ -10,35 +10,41 @@ install go
 ```
 go version
 ```
-## make scripts executable 
-```chmod +x uchain.sh```
-```chmod +x setup.sh```
 
+install build-essential and make
+
+```sh
+sudo apt install build-essential make -y
+```
+
+## make scripts executable 
+```sh
+chmod +x uchain.sh
+chmod +x setup.sh
+```
 
 ## run setup.sh
 
-```./setup.sh```
-
-## copy genesis files
-
-copy genesis files to devnet directory
-
-```cp genesis.json genesis.ssz devnet/```
+```sh
+./setup.sh
+```
 
 cd devnet
 
 
 ## run node (temporary)
 
-```./geth --datadir=gethdata2 init genesis.json```
-
-```
-./geth --http --http.api eth,net,web3 --ws --ws.api eth,net,web3 --authrpc.jwtsecret jwt.hex --datadir gethdata2 --nodiscover --syncmode full --discovery.port 30304 --port 30304 --http.port 8547 --ws.port 8548 --authrpc.port 8552
+```sh
+./geth --http --http.api eth,net,web3 --ws --ws.api eth,net,web3 --authrpc.jwtsecret jwt.hex --datadir gethdata --nodiscover --syncmode full
 ```
 
-```export PEER=/ip4/172.81.179.112/tcp/13000/p2p/16Uiu2HAmTKvLys4NksdMtex176kBXq5SmQGo5bwJjVVchjfoxBzL```
+```sh
+export PEER=/ip4/172.81.179.112/tcp/13000/p2p/16Uiu2HAmTKvLys4NksdMtex176kBXq5SmQGo5bwJjVVchjfoxBzL
+```
 
-```./beacon-chain --datadir beacondata2 --min-sync-peers 1 --genesis-state genesis.ssz --bootstrap-node= --interop-eth1data-votes --chain-config-file config.yml --contract-deployment-block 0 --chain-id 32382 --accept-terms-of-use --jwt-secret jwt.hex --suggested-fee-recipient 0x123463a4B065722E99115D6c222f267d9cABb524 --minimum-peers-per-subnet 0 --enable-debug-rpc-endpoints --execution-endpoint gethdata2/geth.ipc --peer=$PEER --p2p-udp-port 12001 --p2p-tcp-port 13001 --grpc-gateway-port 3501 --rpc-port 4001```
+```sh
+./beacon-chain --datadir beacondata --min-sync-peers 1 --genesis-state genesis.ssz --bootstrap-node= --interop-eth1data-votes --chain-config-file config.yml --contract-deployment-block 0 --chain-id 32382 --accept-terms-of-use --jwt-secret jwt.hex --suggested-fee-recipient 0x123463a4B065722E99115D6c222f267d9cABb524 --minimum-peers-per-subnet 0 --enable-debug-rpc-endpoints --execution-endpoint gethdata/geth.ipc --peer=$PEER
+```
 
 
 ## run node
@@ -55,4 +61,7 @@ cd
 
 ```geth attach http://localhost:8545```
 
+### check block count
+
+web3.eth.blockNumber
 
