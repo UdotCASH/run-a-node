@@ -11,28 +11,28 @@ install go
 go version
 ```
 
-install build-essential
+install build-essential and make
 
 ```sh
-sudo apt install build-essential
+sudo apt install build-essential make -y
 ```
 
 ## make scripts executable 
-```chmod +x uchain.sh```
-```chmod +x setup.sh```
+```sh
+chmod +x uchain.sh
+chmod +x setup.sh
+```
 
 ## run setup.sh
 
-```./setup.sh```
+```sh
+./setup.sh
+```
 
 cd devnet
 
 
 ## run node (temporary)
-
-```sh
-./geth --datadir=gethdata init genesis.json
-```
 
 ```sh
 ./geth --http --http.api eth,net,web3 --ws --ws.api eth,net,web3 --authrpc.jwtsecret jwt.hex --datadir gethdata --nodiscover --syncmode full
@@ -61,4 +61,7 @@ cd
 
 ```geth attach http://localhost:8545```
 
+### check block count
+
+web3.eth.blockNumber
 
