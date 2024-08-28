@@ -10,20 +10,20 @@ install go
 ```
 go version
 ```
+
+install build-essential
+
+```sh
+sudo apt install build-essential
+```
+
 ## make scripts executable 
 ```chmod +x uchain.sh```
 ```chmod +x setup.sh```
 
-
 ## run setup.sh
 
 ```./setup.sh```
-
-## copy genesis files
-
-copy genesis files to devnet directory
-
-```cp genesis.json genesis.ssz devnet/```
 
 cd devnet
 

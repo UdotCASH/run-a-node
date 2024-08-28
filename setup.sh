@@ -4,7 +4,7 @@
 mkdir devnet
 
 # Copy the required files to the devnet directory
-cp genesis.json config.yml jwt.hex secret.txt devnet/
+cp genesis.json genesis.ssz config.yml jwt.hex secret.txt devnet/
 
 # Change to the devnet directory
 cd devnet
