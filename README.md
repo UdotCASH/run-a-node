@@ -33,7 +33,7 @@ cd devnet
 ```./geth --datadir=gethdata init genesis.json```
 
 ```
-./geth --http --http.api eth,net,web3 --ws --ws.api eth,net,web3 --authrpc.jwtsecret jwt.hex --datadir gethdata2 --nodiscover --syncmode full --discovery.port 30304 --port 30304 --http.port 8547 --ws.port 8548 --authrpc.port 8552
+./geth --http --http.api eth,net,web3 --ws --ws.api eth,net,web3 --authrpc.jwtsecret jwt.hex --datadir gethdata2 --nodiscover --syncmode full
 ```
 
 ```export PEER=/ip4/172.81.179.112/tcp/13000/p2p/16Uiu2HAmTKvLys4NksdMtex176kBXq5SmQGo5bwJjVVchjfoxBzL```
