@@ -39,3 +39,9 @@ cd
 ```./uchain.sh run beacon 1```
 
 ```./uchain.sh run validator 1```
+
+## enter geth console
+
+```geth attach http://localhost:8545```
+
+
