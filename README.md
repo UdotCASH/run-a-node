@@ -19,7 +19,7 @@ go version
 
 ```./setup.sh```
 
-## run setup.sh
+## copy genesis files
 
 copy genesis files to devnet directory
 
