@@ -10,6 +10,10 @@ install go
 ```
 go version
 ```
+## make scripts executable 
+```chmod +x uchain.sh```
+```chmod +x setup.sh```
+
 
 ## run setup.sh
 
